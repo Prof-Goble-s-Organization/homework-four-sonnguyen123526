@@ -36,7 +36,7 @@ public class MinKeyFinder implements CS232Visitor<String, Integer> {
 	}
 	
 	public static void main(String[] args) {
-		CS232LinkedBinaryTree<String, Integer> tree = new CS232LinkedBinaryTree<>("Tree root", 9);
+		CS232LinkedBinaryTree<String, Integer> tree = new CS232LinkedBinaryTree<>("9", 9);
 		tree.add("Node1", 10);
 		tree.add("Node2", 11);
 		tree.add("Node3", 12);
@@ -49,7 +49,6 @@ public class MinKeyFinder implements CS232Visitor<String, Integer> {
 			
 		MinKeyFinder minKeyFinder = new MinKeyFinder();
 		tree.visitPreOrder(minKeyFinder);
-		String minKeyGotcha = minKeyFinder.getMinKey();
-		System.out.println("The value of the minimum value is " + minKeyGotcha);
+		System.out.println("The value of the minimum value is " + minKeyFinder.getMinKey());
 	}
 }

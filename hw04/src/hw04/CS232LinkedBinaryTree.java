@@ -183,8 +183,7 @@ public class CS232LinkedBinaryTree<K, V> implements CS232BinaryTree<K, V> {
 		if(node.key.equals(key)){
 			return true;
 		}
-		boolean foundLeftSubtree = subTreeContains(node.left, key);
-    	if (foundLeftSubtree) {
+    	if (subTreeContains(node.left, key)) {
         	return true;
     	}
     	return subTreeContains(node.right, key);
@@ -238,27 +237,35 @@ public class CS232LinkedBinaryTree<K, V> implements CS232BinaryTree<K, V> {
 		BTNode<K, V> newNode = new BTNode<>(key, value);
 		
 		if(root == null){
+
 			root = newNode;
 		}
+
 		else{
+
 			Queue<BTNode<K, V>> nodeQueue = new LinkedList<>();
 			nodeQueue.add(root);
+
 			while(!nodeQueue.isEmpty()){
 				BTNode<K, V> currNode = nodeQueue.remove();
+
 				if (currNode.left == null) {
 					currNode.left = newNode;
 					newNode.parent = currNode;
 					break;
 				}
+
 				else if (currNode.right == null) {
 					currNode.right = newNode;
 					newNode.parent = currNode;
 					break;
 				}
+
 				nodeQueue.add(currNode.left);
 				nodeQueue.add(currNode.right);
 			}
 		}
+
 		size++;
 	}
 
