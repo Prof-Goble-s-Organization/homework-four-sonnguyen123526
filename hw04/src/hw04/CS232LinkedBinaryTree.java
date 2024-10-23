@@ -273,8 +273,6 @@ public class CS232LinkedBinaryTree<K, V> implements CS232BinaryTree<K, V> {
 		 * to the queue and repeat with the node from the head of the queue.
 		 */
 
-	}
-
 	/**
 	 * Remove the node with the specified key from the tree. If the node
 	 * containing the key is a leaf it is simply removed from the tree. If the
@@ -478,3 +476,4 @@ public class CS232LinkedBinaryTree<K, V> implements CS232BinaryTree<K, V> {
 		 */
 	}
 }
+
